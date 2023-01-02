@@ -1,4 +1,4 @@
-const users = require('../../../domain/user/mocks/UserMock')
+const users = require('../../../domain/user/mocks/UserMock');
 
 class createUserPT{
     secondPart(req, res){
@@ -12,6 +12,6 @@ class createUserPT{
             console.log(err)
         }
     }
-}
+};
 
-module.exports = new createUserPT()
+module.exports = new createUserPT();

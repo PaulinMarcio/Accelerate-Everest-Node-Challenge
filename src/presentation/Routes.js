@@ -1,12 +1,12 @@
 const { Router }  = require("express");
 
-const router = Router()
+const router = Router();
 
 const userValid = require('../domain/user/services/UserValid');
-const validError = require('../domain/user/services/HandleValid')
+const validError = require('../domain/user/services/HandleValid');
 
 const allUsers = require('./controllers/list/listUser');
-const createUser = require('./controllers/create/createUser');
+const createUser = require('./controllers/create/createUserPartOne');
 const createUserPT = require('./controllers/create/createUserPartTwo');
 
 const error = validError.validate;

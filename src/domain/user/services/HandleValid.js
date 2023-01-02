@@ -1,4 +1,4 @@
-const { validationResult } = require('express-validator')
+const { validationResult } = require('express-validator');
 
 class handleValid{
     validate(req, res, next){
@@ -9,6 +9,6 @@ class handleValid{
 
         next()
     }
-}
+};
 
-module.exports = new handleValid()
+module.exports = new handleValid();

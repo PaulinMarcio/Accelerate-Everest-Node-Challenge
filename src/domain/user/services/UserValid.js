@@ -3,34 +3,47 @@ const { body } = require('express-validator');
 class userValid{
     validation(){
         return[
-            body('fullname')
+            body('full_name')
+            .notEmpty()
+            .withMessage(body)
             .isString()
-            .withMessage('Nome inválido!'),
+            .withMessage('invalid name'),
 
             body('email')
+            .notEmpty()
+            .withMessage('empty email')
             .isString()
             .isEmail()
-            .withMessage('Email inválido!'),
+            .withMessage('invalid email'),
 
             body('email_confirmation')
+            .notEmpty()
+            .withMessage('empty confirmation email')
             .isString()
             .isEmail()
-            .withMessage('Email inválido!'),
+            .withMessage('invalid confirmation email'),
 
             body('cpf')
+            .notEmpty()
+            .withMessage('empty cpf')
             .isString()
-            .withMessage('CPF inválido!'),
+            .withMessage('invalid cpf'),
+
 
             body('cellphone')
+            .notEmpty()
+            .withMessage('empty cellphone')
             .isString()
-            .withMessage('Telefone inválido!'),
+            .withMessage('invalid cellphone'),
 
             body('birthdate')
+            .notEmpty()
+            .withMessage('empty birthdate')
             .isDate()
             .default(() =>{
                 new Date.parse()
             })
-            .withMessage("Data inválida!"),
+            .withMessage("invalid birthdate"),
 
             body('email_sms')
             .isBoolean(),
@@ -63,6 +76,6 @@ class userValid{
             .withMessage('Número inválido!')
         ]
     }
-}
+};
 
 module.exports = new userValid();

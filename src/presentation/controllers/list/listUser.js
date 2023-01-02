@@ -5,6 +5,6 @@ class allUsers{
     handle(req, res){
         res.status(200).send(users)
     }
-}
+};
 
-module.exports = new allUsers;
+module.exports = new allUsers();
