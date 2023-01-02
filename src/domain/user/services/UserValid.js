@@ -56,24 +56,34 @@ class userValid{
     secondValidation(){
         return[
             body('country')
+            .notEmpty()
+            .withMessage('empty country')
             .isString()
-            .withMessage('País inválido!'),
+            .withMessage('invalid country'),
 
             body('city')
+            .notEmpty()
+            .withMessage('empty city')
             .isString()
-            .withMessage('Cidade inválida!'),
+            .withMessage('invalid city'),
 
             body('postal_code')
+            .notEmpty()
+            .withMessage('empty postal_code')
             .isString()
-            .withMessage('CEP inválido!'),
+            .withMessage('invalid postal_code'),
 
             body('address')
+            .notEmpty()
+            .withMessage('empty address')
             .isString()
-            .withMessage('Endereço inválido!'),
+            .withMessage('invalid address'),
 
             body('number')
+            .notEmpty()
+            .withMessage('empty number')
             .isNumeric()
-            .withMessage('Número inválido!')
+            .withMessage('invalid number')
         ]
     }
 };
