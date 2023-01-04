@@ -1,22 +1,20 @@
 const users = require('../../../domain/user/mocks/UserMock');
 
-class createUser{
-    create(req, res){
-        try{
+class createUser {
+    create(req, res) {
+        try {
             const User = req.body;
-            console.log(User);
-            if (User.email != User.email_confirmation){
+            if (User.email != User.email_confirmation) {
                 return res.status(400).send('Os emails não são iguais!');
-                
+
             };
-            console.log(users);
             users.push(User);
-            
-            
 
-            return res.status(201).send('OK');
 
-        } catch(err){
+
+            return res.status(201).send('Usuário criado com sucesso!');
+
+        } catch (err) {
             console.log(err);
         }
     }
