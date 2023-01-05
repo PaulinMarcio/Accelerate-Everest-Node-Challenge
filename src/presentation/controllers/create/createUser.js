@@ -15,7 +15,7 @@ class createUser {
             return res.status(201).send('Usuário criado com sucesso!');
 
         } catch (err) {
-            console.log(err);
+            return res.status(40).send(`Erro: ${err}`);
         }
     }
 };
