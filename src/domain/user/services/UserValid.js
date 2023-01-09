@@ -1,87 +1,23 @@
-const { body } = require('express-validator');
+const yup = require("yup");
 
-class userValid {
-    validation() {
-        return [
-            body('full_name')
-                .notEmpty()
-                .withMessage(body)
-                .isString()
-                .withMessage('invalid name'),
+const userSchema = yup.object().shape({
+  full_name: yup.string().required(),
+  email: yup.string().email().required(),
+  email_confirmation: yup
+    .string()
+    .email()
+    .required()
+    .oneOf([yup.ref("email"), null], "emails do not match"),
+  cpf: yup.string().required(),
+  cellphone: yup.string().required(),
+  birthdate: yup.date().required(),
+  email_sms: yup.boolean().required(),
+  whatsapp: yup.boolean().required(),
+  country: yup.string().required(),
+  city: yup.string().required(),
+  postal_code: yup.string().required(),
+  address: yup.string().required(),
+  number: yup.number().required(),
+});
 
-            body('email')
-                .notEmpty()
-                .withMessage('empty email')
-                .isString()
-                .isEmail()
-                .withMessage('invalid email'),
-
-            body('email_confirmation')
-                .notEmpty()
-                .withMessage('empty confirmation email')
-                .isString()
-                .isEmail()
-                .withMessage('invalid confirmation email'),
-
-            body('cpf')
-                .notEmpty()
-                .withMessage('empty cpf')
-                .isString()
-                .withMessage('invalid cpf'),
-
-
-            body('cellphone')
-                .notEmpty()
-                .withMessage('empty cellphone')
-                .isString()
-                .withMessage('invalid cellphone'),
-
-            body('birthdate')
-                .notEmpty()
-                .withMessage('empty birthdate')
-                .isDate()
-                .default(() => {
-                    new Date.parse()
-                })
-                .withMessage("invalid birthdate"),
-
-            body('email_sms')
-                .isBoolean(),
-
-            body('whatsapp')
-                .isBoolean(),
-
-            body('country')
-                .notEmpty()
-                .withMessage('empty country')
-                .isString()
-                .withMessage('invalid country'),
-
-            body('city')
-                .notEmpty()
-                .withMessage('empty city')
-                .isString()
-                .withMessage('invalid city'),
-
-            body('postal_code')
-                .notEmpty()
-                .withMessage('empty postal_code')
-                .isString()
-                .withMessage('invalid postal_code'),
-
-            body('address')
-                .notEmpty()
-                .withMessage('empty address')
-                .isString()
-                .withMessage('invalid address'),
-
-            body('number')
-                .notEmpty()
-                .withMessage('empty number')
-                .isNumeric()
-                .withMessage('invalid number')
-        ]
-    }
-};
-
-module.exports = new userValid();
+module.exports = userSchema;
