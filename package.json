@@ -9,6 +9,9 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.3",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.15"
   }
 }

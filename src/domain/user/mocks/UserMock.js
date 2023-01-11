@@ -1,3 +1,3 @@
-const User = []
+const users = [];
 
-module.exports = { User }
+module.exports = users;
