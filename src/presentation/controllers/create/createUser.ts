@@ -1,4 +1,4 @@
-const users = require('../../../domain/user/mocks/UserMock');
+import users from '../../../domain/user/mocks/UserMock';
 
 class createUser {
     create(req, res) {
@@ -7,6 +7,6 @@ class createUser {
         return res.status(201).send('Usuário criado com sucesso!');
 
     }
-};
+}
 
-module.exports = new createUser();
+export = new createUser();

@@ -1,4 +1,4 @@
-const yup = require("yup");
+import * as yup from "yup";
 
 const userSchema = yup.object().shape({
   full_name: yup.string().required(),
@@ -20,4 +20,4 @@ const userSchema = yup.object().shape({
   number: yup.number().required(),
 });
 
-module.exports = userSchema;
+export = userSchema;
