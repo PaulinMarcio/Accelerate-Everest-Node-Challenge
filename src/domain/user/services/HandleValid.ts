@@ -1,7 +1,6 @@
 import {Request, Response, NextFunction} from "express"
-import userSchema from "./UserValid"
-
-function validation(userSchema) {
+import {userSchemaI} from "./UserValid";
+function validation(userSchema: userSchemaI) {
   return async (req: Request, res: Response, next: NextFunction) => {
     const body = req.body;
 

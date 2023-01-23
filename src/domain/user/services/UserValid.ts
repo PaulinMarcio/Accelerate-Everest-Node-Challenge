@@ -1,4 +1,19 @@
 import * as yup from "yup";
+export interface userSchemaI {
+full_name: string;
+email: string;
+email_confirmation: string;
+cpf: string;
+cellphone: string;
+birthdate: Date;
+email_sms: boolean;
+whatsapp: boolean;
+country: string;
+city: string;
+postal_code: string;
+address: string;
+number: number;
+}
 
 const userSchema = yup.object().shape({
   full_name: yup.string().required(),
@@ -20,4 +35,4 @@ const userSchema = yup.object().shape({
   number: yup.number().required(),
 });
 
-export = userSchema;
+export default userSchema;
