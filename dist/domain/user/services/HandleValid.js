@@ -1,14 +1,12 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.validation = void 0;
-const UserValid_1 = require("./UserValid");
-const validation = (req, res, next) => {
+const validation = (schema) => async (req, res, next) => {
+    const body = req.body;
     try {
-        UserValid_1.userSchema.validate(req.body);
+        await schema.validate(body);
         next();
     }
     catch (err) {
         return res.status(400).json({ err });
     }
 };
-exports.validation = validation;
+module.exports = validation;

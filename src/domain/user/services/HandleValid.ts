@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from "express"
+import { userSchema } from "./UserValid";
 
-const validation = (schema) => async(req: Request, res:Response, next:NextFunction) => {
+const validation = (schema: typeof userSchema) => async(req: Request, res:Response, next:NextFunction) => {
   const body = req.body;
 
   try{
