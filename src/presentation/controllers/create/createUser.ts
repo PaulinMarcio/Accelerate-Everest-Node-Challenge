@@ -1,5 +1,6 @@
 import users from '../../../domain/user/mocks/UserMock';
 import {Request, Response} from "express"
+
 class createUser {
     create(req: Request, res: Response) {
         const User = req.body;
