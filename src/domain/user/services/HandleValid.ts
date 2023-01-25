@@ -1,16 +1,14 @@
-import {Request, Response, NextFunction} from "express"
-import {userSchemaI} from "./UserValid";
-function validation(userSchema: userSchemaI) {
-  return async (req: Request, res: Response, next: NextFunction) => {
-    const body = req.body;
+import { Request, Response, NextFunction } from "express"
 
-    try {
-      await userSchema.validate(body);
-      next();
-    } catch (err) {
-      return res.status(400).json({ err });
-    }
-  };
-}
+const validation = (schema) => async(req: Request, res:Response, next:NextFunction) => {
+  const body = req.body;
+
+  try{
+    await schema.validate(body)
+    next()
+  } catch(err){
+    return res.status(400).json({err})
+  }
+};
 
 export = validation;

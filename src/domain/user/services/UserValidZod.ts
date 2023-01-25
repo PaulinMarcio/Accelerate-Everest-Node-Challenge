@@ -14,10 +14,11 @@ const userSchema = z.object({
     postal_code: z.string().min(8),
     address: z.string().min(3),
     number: z.number(),
-}).refine((data) => data.email === data.email_confirmation, {
-    message: "Email_confirmation must match Email."
+}).refine(data => data.email === data.email_confirmation, {
+    message: "Email_confirmation must match Email.",
+    path: ["email_confirmation"],
 })
 
-type userSchema = z.infer<typeof userSchema>
+type schemaType = z.infer<typeof userSchema>
 
-export {userSchema}
+export {userSchema, schemaType}
