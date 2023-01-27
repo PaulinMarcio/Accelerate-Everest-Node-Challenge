@@ -1,11 +1,9 @@
-import userData from "../../../domain/user/mocks/UserMock";
+import { users } from "../../../domain/user/mocks/UserMock";
 import { Request, Response } from "express";
 
-class allUsers{
+export class allUsers{
 
     handle(req: Request, res: Response){
-        res.status(200).send(userData)
+        res.status(200).send(users)
     }
 }
-
-export = new allUsers();

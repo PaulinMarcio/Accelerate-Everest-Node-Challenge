@@ -1,6 +1,6 @@
 import { object, string, date, number, boolean, ref } from 'yup';
 
-const userSchema = object().shape({
+export const userSchema = object().shape({
 
     full_name: string().required().min(3),
     email: string().email().required(),
@@ -20,5 +20,3 @@ const userSchema = object().shape({
     number: number().required().min(1)
 
 });
-
-export { userSchema };

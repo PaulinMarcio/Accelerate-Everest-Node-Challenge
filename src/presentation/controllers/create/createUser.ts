@@ -1,7 +1,7 @@
-import users from '../../../domain/user/mocks/UserMock';
-import {Request, Response} from "express"
+import { users } from '@mocks/UserMock';
+import { Request, Response } from "express"
 
-class createUser {
+export class createUser {
     create(req: Request, res: Response) {
         const User = req.body;
         users.push(User);
@@ -9,5 +9,3 @@ class createUser {
 
     }
 }
-
-export = new createUser();

@@ -1,12 +1,12 @@
 import { Router } from "express";
-import allUsers from './controllers/list/listUser';
-import validation from '../domain/user/services/HandleValid';
-import { userSchema } from "../domain/user/services/UserValid";
-import createUser from './controllers/create/createUser';
+import { allUsers } from "@controllers/list/listUser";
+import { validation } from '@services/HandleValid';
+import { userSchema } from "@services/UserValid";
+import { createUser } from '@controllers/create/createUser';
 
-const router = Router();
+export const router = Router();
+const users = new allUsers();
+const create = new createUser();
 
-router.get("/customer", allUsers.handle);
-router.post("/create-user", validation(userSchema), createUser.create);
-
-export = router;
+router.get("/customer", users.handle);
+router.post("/create-user", validation(userSchema), create.create);

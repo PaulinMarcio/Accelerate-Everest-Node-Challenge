@@ -1,3 +1,1 @@
-const users: (string | number | Date | boolean)[] = [];
-
-export = users;
+export const users: (string | number | Date | boolean)[] = [];
