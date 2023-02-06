@@ -1,2 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-export const users: Array<any> = [];
+import { User } from "entities/User";
+
+export const users: Array<User> = [];
