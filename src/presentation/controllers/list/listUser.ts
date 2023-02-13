@@ -1,4 +1,4 @@
-import { users } from "../../../domain/user/UserMock";
+import { users } from "src/domain/user/User";
 import { Request, Response } from "express";
 
 export class allUsers{

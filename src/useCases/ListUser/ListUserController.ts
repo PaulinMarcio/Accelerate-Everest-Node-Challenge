@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-import { users } from "../../domain/user/UserMock";
+import { users } from "../../domain/user/User";
 
 export class ListUser {
 
@@ -12,7 +12,7 @@ export class ListUser {
 
         } catch (err) {
 
-            return res.status(500).send('Unxpected error');
+            return res.status(500).send(`Unexpected error: ${err}`);
 
         }
 

@@ -1,5 +1,5 @@
 import "reflect-metadata";
-import "./shared/container/Index";
+import "./shared/container/index";
 import express from 'express';
 import { router } from './presentation/Routes';
 
