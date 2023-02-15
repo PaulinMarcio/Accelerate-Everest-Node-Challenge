@@ -1,12 +1,13 @@
-import { Router } from "express";
-import { allUsers } from "@controllers/list/listUser";
-import { validation } from '@services/HandleValid';
-import { userSchema } from "@services/UserValid";
-import { createUser } from '@controllers/create/createUser';
+import { Request, Response, Router } from 'express';
+import { validation } from 'domain/services/HandleValid';
+import { userSchema } from "domain/schema/UserValid";
+
+
+import { listUserUseCase } from '../useCases/ListUser/ListUser';
+import { createUserController } from '../useCases/CreateUser/CreateUserIndex';
 
 export const router = Router();
-const users = new allUsers();
-const create = new createUser();
-
-router.get("/customer", users.handle);
-router.post("/create-user", validation(userSchema), create.create);
+router.get("/customer", listUserUseCase.list);
+router.post("/create-user", validation(userSchema), (req: Request, res: Response) => {
+    return createUserController.handle(req, res);
+});
