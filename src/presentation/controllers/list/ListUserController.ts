@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-import { users } from "../../domain/user/User";
+import { users } from "../../../domain/user/User";
 
 export class ListUser {
 
@@ -8,7 +8,7 @@ export class ListUser {
 
         try {
 
-            res.status(201).send(users);
+            return res.status(201).send(typeof(users));
 
         } catch (err) {
 

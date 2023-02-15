@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "scripts": {
     "start": "nodemon ./src/index.js",
-    "build": "npx tsc",
     "test": "jest"
   },
   "main": "index.js",

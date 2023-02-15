@@ -1,6 +1,6 @@
 import { Request, Response, Router } from 'express';
-import { validation } from 'domain/services/HandleValid';
-import { userSchema } from "domain/schema/UserValid";
+import { validation } from 'src/domain/services/HandleValid';
+import { userSchema } from "src/domain/schema/UserValid";
 
 
 import { listUserUseCase } from '../useCases/ListUser/ListUser';

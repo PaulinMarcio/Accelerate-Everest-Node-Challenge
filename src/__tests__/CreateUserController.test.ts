@@ -1,7 +1,7 @@
 import "reflect-metadata";
 
 import { user } from '../domain/user/UserMockTest'
-import { CreateUserController } from "../useCases/CreateUser/CreateUserController";
+import { CreateUserController } from "../presentation/controllers/create/CreateUserController";
 import { CreateUserRepository } from "../repository/CreateUser";
 import { Request, Response } from 'express';
 
