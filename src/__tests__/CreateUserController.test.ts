@@ -3,7 +3,7 @@ import "reflect-metadata";
 import { user } from '../domain/user/UserMockTest'
 import { CreateUserController } from "../presentation/controllers/create/CreateUserController";
 import { CreateUserRepository } from "../repository/CreateUser";
-import { request, Request, Response } from 'express';
+import { Request, Response } from 'express';
 
 const mockReq: Request = { 
     body: user
