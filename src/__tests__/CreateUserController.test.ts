@@ -3,7 +3,7 @@ import "reflect-metadata";
 import { user } from '../domain/user/UserMockTest'
 import { CreateUserController } from "../presentation/controllers/create/CreateUserController";
 import { CreateUserRepository } from "../repository/CreateUser";
-import { Request, Response } from 'express';
+import { request, Request, Response } from 'express';
 
 const mockReq: Request = { 
     body: user
@@ -27,4 +27,5 @@ describe('Testes do create user controller', () => {
     test('Retorno de Status', () => {
         expect(response).toHaveProperty('status')
     })
+
 })

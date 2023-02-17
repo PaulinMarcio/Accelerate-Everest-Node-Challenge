@@ -8,7 +8,7 @@ export class ListUser {
 
         try {
 
-            return res.status(201).send(typeof(users));
+            return res.status(201).send(users);
 
         } catch (err) {
 
