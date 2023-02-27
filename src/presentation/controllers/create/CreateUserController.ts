@@ -18,6 +18,7 @@ export class CreateUserController {
         try {
 
             this.createUser.create(user)
+            res.json(user)
             return res;
         
         } catch (err) {

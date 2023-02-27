@@ -1,4 +1,4 @@
-import { User } from "src/entities/User";
+import { User } from "@entities/User";
 
 export const user: User = {
     fullName: "Marcio",
