@@ -18,11 +18,12 @@ export class CreateUserController {
         try {
 
             this.createUser.create(user)
+            res.json(user)
             return res;
         
         } catch (err) {
 
-            return res.status(500).send(`${err}`)
+            return err
         
         }
     }
