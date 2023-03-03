@@ -1,6 +1,6 @@
-import { User } from "@entities/User";
+import { ICreateUserDTO } from "src/useCases/CreateUser/CreateUserDTO";
 
-export const user: User = {
+export const user: ICreateUserDTO = {
     fullName: "Marcio",
     email: "marcio.paulin@warren.com.br",
     emailConfirmation: "marcio.paulin@warren.com.br",

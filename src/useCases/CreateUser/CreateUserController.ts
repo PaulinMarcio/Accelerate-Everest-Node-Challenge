@@ -1,23 +1,20 @@
+import { User } from '@entities/User';
 import { Request, Response } from 'express';
-import { inject, injectable } from 'tsyringe';
 
-import {ICreateUserDTO} from "./CreateUserDTO";
+//import {ICreateUserDTO} from "./CreateUserDTO";
 import { CreateUserService } from './CreateUserService';
-
-@injectable()
 export class CreateUserController {
     constructor(
-        @inject("CreateUserRepository")
-        private createUser: CreateUserService
+        private createUserService: CreateUserService
     ) { }
 
     handle(req: Request, res: Response) {
 
-        const user: ICreateUserDTO = req.body;
+        const user: User = req.body;
 
         try {
 
-            this.createUser.execute(user)
+            this.createUserService.execute(user)
             res.json(user)
             return res;
         
