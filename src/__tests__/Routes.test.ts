@@ -24,3 +24,13 @@ describe("POST /create-user", () => {
     })
 
 })
+
+describe('/GET customer', () => {
+    test("Deve pegar a lista de usuários", async () => {
+        const response = await request(app)
+        .get("/customer")
+
+        expect(response.status).toEqual(201)
+
+    })
+})

@@ -1,7 +1,5 @@
 import { User } from '@entities/User';
 import { Request, Response } from 'express';
-
-//import {ICreateUserDTO} from "./CreateUserDTO";
 import { CreateUserService } from './CreateUserService';
 export class CreateUserController {
     constructor(
