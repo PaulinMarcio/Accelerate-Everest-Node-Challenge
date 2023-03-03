@@ -1,4 +1,4 @@
-import { users } from "../domain/user/UserMock";
+import { users } from "../domain/user/User";
 import { User } from "../entities/User";
 import { ICreateUserRepository } from "./ICreateUser";
 

@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express"
 import { userSchema } from "../schema/UserValid";
-import { users } from "../user/UserMock"
+import { users } from "../user/User"
 
 export const validation = (schema: typeof userSchema) => async(req: Request, res:Response, next:NextFunction) => {
   const body: typeof users = req.body;
