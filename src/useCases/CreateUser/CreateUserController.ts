@@ -1,14 +1,14 @@
 import { Request, Response } from 'express';
 import { inject, injectable } from 'tsyringe';
 
-import {ICreateUserRepository} from "@repository/ICreateUser";
-import {ICreateUserDTO} from "../../../useCases/CreateUser/CreateUserDTO";
+import {ICreateUserDTO} from "./CreateUserDTO";
+import { CreateUserService } from './CreateUserService';
 
 @injectable()
 export class CreateUserController {
     constructor(
         @inject("CreateUserRepository")
-        private createUser: ICreateUserRepository
+        private createUser: CreateUserService
     ) { }
 
     handle(req: Request, res: Response) {
@@ -17,7 +17,7 @@ export class CreateUserController {
 
         try {
 
-            this.createUser.create(user)
+            this.createUser.execute(user)
             res.json(user)
             return res;
         

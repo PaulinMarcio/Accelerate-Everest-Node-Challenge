@@ -9,9 +9,9 @@ describe("POST /create-user", () => {
             .post("/create-user")
             .send(user)
 
-        console.log(response.body)
         expect(response.header['content-type']).toMatch("application/json")
         expect(response.status).toEqual(200)
+        expect(response.body.email).toEqual(response.body.emailConfirmation)
     })
 
     test("Deve dar erro", async () => {
