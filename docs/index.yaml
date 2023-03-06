@@ -1,0 +1,106 @@
+openapi: 3.0.3
+info:
+  title: Accelerate Everest - NodeJS Challenge
+  description: |-
+    Essa documentação é para as rotas de uma api de cadastro de clientes, da trilha Accelerate de NodeJS
+  version: 1.0.11
+servers:
+  - url: localhost:8080
+tags:
+  - name: API
+    description: Rotas padrões
+paths:
+  /api/create-user:
+    post:
+      tags:
+        - API
+      summary: Criação do usuário
+      operationId: createUser
+      requestBody:
+        description: Created user object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/User'
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '404':
+          description: Erro - Dados insuficientes
+  /api/list-user:
+    get:
+      tags:
+        - API
+      summary: Pega todos os usuários
+      description: ''
+      operationId: listUser
+      responses:
+        '200':
+          description: Operação concluida
+          content:
+            application/json:
+              schema:
+                  $ref: '#/components/schemas/User'
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        fullName:
+          type: string
+          example: Marcio Pires Paulin Junior
+          description: Nome completo
+        email:
+          type: string
+          example: marcio.paulin@hotmail.com
+          description: Email
+        emailConfirmation:
+          type: string
+          example: marcio.paulin@hotmail.com
+          description: Confirmação de email
+        cpf:
+          type: string
+          example: '000.000.000-00'
+          description: CPF
+        cellphone:
+          type: string
+          example: '51999999999'
+          description: Numero de celular
+        birthdate:
+          type: string
+          format: Date
+          example: '2018-08-12'
+          description: Data de nascimento
+        emailSms:
+          type: boolean
+          example: true
+          description: Aceita contato via Email  
+        whatsapp:
+          type: boolean
+          example: true
+          description: Aceita contato via Whatsapp
+        country:
+          type: string
+          example: 'Brasil'
+          description: Pais
+        city:
+          type: string
+          example: 'Porto Alegre'
+          description: Cidade
+        postalCode:
+          type: string
+          example: '00000000'
+          description: CEP
+        address:
+          type: string
+          example: 'R. Jose Marcelino'
+          description: Endereço da pessoa
+        number:
+          type: integer
+          format: int32
+          example: 00
+          description: Numero da casa

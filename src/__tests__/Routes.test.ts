@@ -6,7 +6,7 @@ describe("POST /create-user", () => {
     test("Deve inserir o usuário e dar ok", async () => {
 
         const response = await request(app)
-            .post("/create-user")
+            .post("/api/create-user")
             .send(user)
 
         expect(response.header['content-type']).toMatch("application/json")
@@ -16,7 +16,7 @@ describe("POST /create-user", () => {
 
     test("Deve dar erro", async () => {
         const response = await request(app)
-            .post("/create-user")
+            .post("/api/create-user")
             .send()
 
         expect(response.status).toEqual(404)
@@ -25,10 +25,10 @@ describe("POST /create-user", () => {
 
 })
 
-describe('/GET customer', () => {
+describe('/GET user', () => {
     test("Deve pegar a lista de usuários", async () => {
         const response = await request(app)
-        .get("/customer")
+        .get("/api/list-user")
 
         expect(response.status).toEqual(201)
 

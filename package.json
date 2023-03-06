@@ -10,6 +10,8 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.3",
+    "swagger-ui-express": "^4.6.2",
+    "yamljs": "^0.3.0",
     "yup": "^0.32.11"
   },
   "devDependencies": {
@@ -17,6 +19,8 @@
     "@types/jest": "^29.4.0",
     "@types/node": "^18.11.18",
     "@types/supertest": "^2.0.12",
+    "@types/swagger-ui-express": "^4.1.3",
+    "@types/yamljs": "^0.2.31",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
     "eslint": "^8.32.0",
