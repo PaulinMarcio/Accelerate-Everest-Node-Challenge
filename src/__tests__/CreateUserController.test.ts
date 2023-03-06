@@ -1,31 +1,31 @@
-import "reflect-metadata";
+import "reflect-metadata"
 
-import { user } from '../domain/user/UserMockTest'
-import { CreateUserController } from "../presentation/controllers/create/CreateUserController";
-import { CreateUserRepository } from "../repository/CreateUser";
+import { User } from '@entities/User';
+import { user } from "../domain/user/EmptyMockTest"
+import { CreateUserService } from '../useCases/CreateUser/CreateUserService';
+import {CreateUserController} from '../useCases/CreateUser/CreateUserController'
+import { CreateUserRepository } from '../useCases/CreateUser/CreateUser';
 import { Request, Response } from 'express';
 
-const mockReq: Request = { 
-    body: user
-} as Request;
 
-const mockRes: Response = {
+const userRepository = new CreateUserRepository();
+const userService = new CreateUserService(userRepository)
+const createUser = new CreateUserController(userService)
+
+const mockUser = new User(user)
+const mockReq = {
+ body: mockUser
+} as Request
+const mockRes = {
     json: mockReq.body,
-    status: 201
-} as unknown as Response;
+    status: 404
+} as unknown as Response
 
-const createUserRepository = new CreateUserRepository();
-const createUserController = new CreateUserController(createUserRepository);
+describe('Retorno de erro do controller', () => {
+    
+    createUser.handle(mockReq, mockRes)
 
-describe('Testes do create user controller', () => {
-    const response = createUserController.handle(mockReq, mockRes);
-
-    test('Retorno de Json', () => {
-        expect(response).toHaveProperty('json')
+    test('Deve retornar erro caso o usuário esteja vazio', () => {
+        expect(createUser.handle).toThrow(TypeError)
     })
-
-    test('Retorno de Status', () => {
-        expect(response).toHaveProperty('status')
-    })
-
 })

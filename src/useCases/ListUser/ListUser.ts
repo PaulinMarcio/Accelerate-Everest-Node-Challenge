@@ -1,4 +1,4 @@
-import { ListUser } from '../../presentation/controllers/list/ListUserController';
+import { ListUser } from './ListUserController';
 
 const listUserUseCase = new ListUser();
 

@@ -1,17 +1,17 @@
 import { ICreateUserDTO } from "src/useCases/CreateUser/CreateUserDTO";
 
 export const user: ICreateUserDTO = {
-    fullName: "Marcio",
+    fullName: "",
     email: "marcio.paulin@warren.com.br",
     emailConfirmation: "marcio.paulin@warren.com.br",
-    cpf: "123.123.123-12",
-    cellphone: "51912341234",
+    cpf: "",
+    cellphone: "",
     birthdate: new Date(),
     emailSms: true,
     whatsapp: false,
-    country: "Brasil",
-    city: "Cachoeirinha",
-    postalCode: "99999999",
-    address: "R. Samuara",
+    country: "",
+    city: "",
+    postalCode: "",
+    address: "",
     number: 10
 }
