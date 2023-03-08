@@ -12,6 +12,6 @@ const file  = readFileSync('./docs/index.yaml', 'utf8')
 const swaggerDocument = parse(file)
 app.use(express.json());
 app.use(router);
-app.use('/api-docs', serve, setup(swaggerDocument));
+app.use('/docs', serve, setup(swaggerDocument));
 
 export {app}
