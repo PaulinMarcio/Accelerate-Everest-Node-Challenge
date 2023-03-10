@@ -1,7 +1,10 @@
+import {dataBaseClienteInstance} from './infrastructure/mongodb/IndexMongoClient'
 import {app} from './server';
 
-const port = 8080;
+const port = process.env.PORT;
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+app.listen(port, async () => {
+  await dataBaseClienteInstance.connect()
+    .then(console.log)
+    .catch(() => dataBaseClienteInstance.close());
 });

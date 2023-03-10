@@ -9,7 +9,10 @@
   "author": "Junior Alves <junior.alves@warren.com.br>",
   "license": "MIT",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "express": "^4.17.3",
+    "mongodb": "^5.1.0",
+    "mongoose": "^7.0.1",
     "swagger-ui-express": "^4.6.2",
     "yamljs": "^0.3.0",
     "yup": "^0.32.11"
